@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Inventory Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>School Supply Inventory Dashboard</h1>
+    </header>
+
+    <section>
+        <table id="inventoryTable">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity Before</th>
+                    <th>Quantity After</th>
+                    <th>Total</th> <!-- New Total column -->
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Editable rows of data -->
+                <tr>
+                    <td contenteditable="true">Notebooks</td>
+                    <td contenteditable="true">100</td>
+                    <td contenteditable="true">90</td>
+                    <td class="total">10</td> <!-- Display calculated total -->
+                    <td contenteditable="true">Standard school notebooks</td>
+                    <td><button onclick="saveChanges(this)">Save Changes</button></td>
+                </tr>
+                <!-- More rows can be added dynamically -->
+            </tbody>
+        </table>
+
+        <!-- Button to add a new row -->
+        <button onclick="addRow()">Add Row</button>
+    </section>
+
+    <footer>
+        <button onclick="logout()">Logout</button>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
